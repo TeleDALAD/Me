@@ -15,7 +15,7 @@ local function pre_process(msg)
 		timetoexpire = math.floor((tonumber(expiretime) - tonumber(now)) / 86400) + 1
 		if tonumber("0") > tonumber(timetoexpire) and not is_sudo(msg) then
 		if msg.text:match('/') then
-			return send_large_msg(get_receiver(msg), '鬲丕乇蹖禺 丕鬲賯囟丕蹖 诏乇賵賴 亘賴 倬丕蹖丕賳 乇爻蹖丿.')
+			return send_large_msg(get_receiver(msg), ' انقضای گپ به پایان رسیده برای تمدید به سودو پیام بدید @myth_Typer .')
 		else
 			return
 		end
