@@ -399,10 +399,10 @@ end
 	else
 		access = 0
 	end]]
-	if matches[1] == '/infodel' and is_sudo(msg) then
+	if matches[1] == 'rankdel' and is_sudo(msg) then
 		azlemagham = io.popen('rm ./info/'..matches[2]..'.txt'):read('*all')
 		return 'از مقام خود عزل شد'
-	elseif matches[1] == '/info' and is_sudo(msg) then
+	elseif matches[1] == 'setrank' and is_sudo(msg) then
 		local name = string.sub(matches[2], 1, 50)
 		local text = string.sub(matches[3], 1, 10000000000)
 		local file = io.open("./info/"..name..".txt", "w")
@@ -504,8 +504,8 @@ end
 return {
 	description = "User Infomation",
 	patterns = {
-		"^(/infodel) (.*)$",
-		"^(/info) ([^%s]+) (.*)$",
+		"^(rankdel) (.*)$",
+		"^(setrank) ([^%s]+) (.*)$",
 		"^([Ii]nfo) (.*)$",
 		"^(info)$",
 		"^(Info)$",
