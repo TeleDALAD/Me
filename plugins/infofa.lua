@@ -24,7 +24,7 @@ local function res_user_callback(extra, success, result) -- /info <username> fun
 	local hash = 'rank:'..extra.chat2..':variables'
 	local value = redis:hget(hash, result.id)
     if not value then
-	 if result.id == tonumber(SUDO) then
+	if result.id == tonumber(SUDO) then
 	   text = text..'مقام : sudo⭐️⭐️⭐️⭐️⭐️  \n\n'
 	  elseif is_admin2(result.id) then
 	   text = text..'مقام : Admin⭐️⭐️⭐️⭐️ \n\n'
@@ -63,7 +63,7 @@ local function action_by_id(extra, success, result)  -- /info <ID> function
   local hash = 'rank:'..extra.chat2..':variables'
   local value = redis:hget(hash, result.id)
   if not value then
-	  if result.id == tonumber(SUDO) then
+	 if result.id == tonumber(SUDO) then
 	   text = text..'مقام : sudo⭐️⭐️⭐️⭐️⭐️  \n\n'
 	  elseif is_admin2(result.id) then
 	   text = text..'مقام : Admin⭐️⭐️⭐️⭐️ \n\n'
@@ -101,7 +101,7 @@ local function action_by_reply(extra, success, result)-- (reply) /info  function
 	local hash = 'rank:'..result.to.id..':variables'
 		local value = redis:hget(hash, result.from.id)
 		 if not value then
-		     if result.id == tonumber(SUDO) then
+		   if result.id == tonumber(SUDO) then
 	   text = text..'مقام : sudo⭐️⭐️⭐️⭐️⭐️  \n\n'
 	  elseif is_admin2(result.id) then
 	   text = text..'مقام : Admin⭐️⭐️⭐️⭐️ \n\n'
@@ -150,7 +150,7 @@ local function run(msg, matches)
   return text
   end
   end
- if matches[1]:lower() == 'info' and not matches[2] then
+ if matches[1]:lower() == 'id' and not matches[2] then
   local receiver = get_receiver(msg)
   local Reply = msg.reply_id
   if msg.reply_id then
@@ -169,7 +169,7 @@ local function run(msg, matches)
 	if hash then
 	  local value = redis:hget(hash, msg.from.id)
 	  if not value then
-		 if result.id == tonumber(SUDO) then
+		if result.id == tonumber(SUDO) then
 	   text = text..'مقام : sudo⭐️⭐️⭐️⭐️⭐️  \n\n'
 	  elseif is_admin2(result.id) then
 	   text = text..'مقام : Admin⭐️⭐️⭐️⭐️ \n\n'
@@ -198,7 +198,7 @@ local function run(msg, matches)
     return send_msg(receiver, text, ok_cb, true)
     end
   end
-  if matches[1]:lower() == 'info' and matches[2] then
+  if matches[1]:lower() == 'id' and matches[2] then
    local user = matches[2]
    local chat2 = msg.to.id
    local receiver = get_receiver(msg)
@@ -222,8 +222,8 @@ return {
 	'(Reply)!setrank <rank>: change members rank.',
   },
   patterns = {
-	"^[/!](info)$",
-	"^[/!](info) (.*)$",
+	"^[/!](id)$",
+	"^[/!](id) (.*)$",
 	"^[/!]([Ss][Ee][Tt][Rr][Aa][Nn][Kk]) (%d+) (.*)$",
 	"^[/!]([Ss][Ee][Tt][Rr][Aa][Nn][Kk]) (.*)$",
   },
