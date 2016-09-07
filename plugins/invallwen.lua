@@ -15,7 +15,7 @@ local function run(msg, matches)
   end
 
   -- The message must come from a chat group
-  if msg.to.type == 'chat' then
+  if msg.to.type == 'channel' then
     local chat = 'chat#id'..msg.to.id
     chat_add_user(chat, user, callback, false)
     return "سازنده ربات وارد گروه شد"
