@@ -121,7 +121,7 @@ local function action_by_reply(extra, success, result)-- (reply) /info  function
   local um_hash = 'msgs:'..result.from.id..':'..result.to.id
   user_info_msgs = tonumber(redis:get(um_hash) or 0)
   text = text..'تعداد پیام های فرستاده شده : '..user_info_msgs..'\n\n'
-  text = text..'@Yalda_Robot'
+  text = text..'@Tele_Mega'
   send_msg(extra.receiver, text, ok_cb, true)
 end
 
