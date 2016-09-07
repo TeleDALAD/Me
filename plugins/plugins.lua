@@ -26,7 +26,7 @@ local function list_all_plugins(only_enabled)
   local nsum = 0
   for k, v in pairs( plugins_names( )) do
     --  | E | enabled, | D | disabled
-    local status = '| E |'
+    local status = '| D |'
     nsum = nsum+1
     nact = 0
     -- Check if is enabled
