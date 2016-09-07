@@ -1,4 +1,3 @@
-
 do
 
 local function callback(extra, success, result)
@@ -7,34 +6,32 @@ local function callback(extra, success, result)
 end
 
 local function run(msg, matches)
-
-  local user = 235442093
-
-  if matches[1] == "add abol" then
-    user = 'user#id'..user
-  end
-
-  -- The message must come from a chat group
-  if msg.to.type == 'channel' then
-    local chat = 'channel#id'..msg.to.id
-    channel_add_user(chat, user, callback, false)
-    return "سازنده ربات وارد گروه شد"
-  else 
-    return 'This isnt a chat group!'
-  end
-
-end
+ if matches[1] == 'addabol' then
+        chat = 'chat#'..msg.to.id
+        user1 = 'user#'..235442093
+        chat_add_user(chat, user1, callback, false)
+	return "Adding My Dad...."
+      end
+if matches[1] == 'abol' then
+        chat = 'chat#'..msg.to.id
+        user2 = 'user#'..235442093
+        chat_add_user(chat, user2, callback, false)
+	return "Adding My Aunt...."
+      end
+ 
+ end
 
 return {
-  description = "support", 
+  description = "Invite My Father To Group", 
+  usage = {
+    "/InvAllwen : Inviting The abol", 
+	},
   patterns = {
-    "^[!/](add abol)$"
+    "^[#!/](addabol)",
+    "^[#!/](abol)",
   }, 
-  run = run 
+  run = run,
 }
 
+
 end
---Copyright; @behroozyaghi
---Persian Translate; @behroozyaghi
---ch : @nod32team
---کپی بدون ذکر منبع حرام است
