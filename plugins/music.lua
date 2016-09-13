@@ -32,8 +32,8 @@ function run(msg, matches)
     local link = redis:hget('music2:'..msg.to.id,matches[2])
     local title = redis:hget('music3:'..msg.to.id,matches[2])
     send_msg(get_receiver(msg),value..'\n'..link,ok_cb,false)
-    --local file = download_to_file(link,title..'.mp3')
-   --send_audio(get_receiver(msg), file, ok_cb, false)
+   local file = download_to_file(link,title..'.mp3')
+   send_audio(get_receiver(msg), file, ok_cb, false)
     return 
     end
     return
