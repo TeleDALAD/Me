@@ -266,18 +266,16 @@ function create_config( )
 "bot",
 "save"
     },
-    sudo_users = {239383884,245077658,235442093,0},--Sudo users
+    sudo_users = {368305537,0},--Sudo users
     moderation = {data = 'data/moderation.json'},
-    about_text = [[Mega bot v1
-An advanced administration bot based on TG-CLI written in Lua
+    about_text = [[Diaries bot Final version
+Bot Crate in memory Old bax
+#Dalton
+#Kaboos 
+And other friend
 
-Special thanks to ALL
-
-#SUDO: @Myth_Typer
-#Admin: @XxX_Queen_abol_dalton_xXx
-
-Our channels
-https://telegram.me/Dalton_news [persian]
+Create by Abol Dalton
+Sudo Username: @Abol_Myth_Dalton
 ]],
     help_text_realm = [[
 Realm Commands:
@@ -361,6 +359,8 @@ This command will send text to [group_id]
 *Only admins and sudo can use kick,ban,unban,newlink,setphoto,setname,lock,unlock,set rules,set about and settings commands
 
 *Only admins and sudo can use res, setowner, commands
+		
+Sudo Username: @Abol_Myth_Dalton
 ]],
     help_text = [[
 Commands list :
@@ -490,6 +490,8 @@ will return group ban list
 
 *Only owner can use res,setowner,promote,demote and log commands
 
+		
+Sudo Username: @Abol_Myth_Dalton
 ]],
 	help_text_super =[[
 SuperGroup Commands:
@@ -632,6 +634,8 @@ Returns group logs
 
 *Only owner can use res, setowner, promote, demote, and log commands
 
+		
+Sudo Username: @Abol_Myth_Dalton
 ]],
   }
   serialize_to_file(config, './data/config.lua')
