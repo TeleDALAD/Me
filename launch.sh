@@ -48,7 +48,7 @@ install_luarocks() {
     then echo "Error. Exiting.";exit $RET;
 
   fi
-    cd ..
+  cd ..
 
   rm -rf luarocks
 
@@ -145,7 +145,7 @@ install() {
   if [ $RET -ne 0 ]; then
 
     autoconf -i
-    fi
+fi
 
   ./configure && make
 
@@ -182,12 +182,12 @@ else
     echo "Run $0 install"
 
     exit 1
-
-  fi
+    fi
 
 
   if [ ! -f ./tg/bin/telegram-cli ]; then
-echo "tg binary not found"
+
+    echo "tg binary not found"
 
     echo "Run $0 install"
 
@@ -206,5 +206,3 @@ echo "tg binary not found"
   done
 
 fi
-
--- abol
