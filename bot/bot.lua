@@ -243,7 +243,6 @@ function create_config( )
         "send",
         "delcmd",
         "inkie",
-        "sets",
         "setbye",
         "setwlc",
         "show",
@@ -263,7 +262,8 @@ function create_config( )
         "activeuser",
         "pmrsn",
         "addplug",
-"bot",
+			"botmsg",
+			"emoji",
 "save"
     },
     sudo_users = {368305537,0},--Sudo users
